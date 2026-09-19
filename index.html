@@ -1,57 +1,301 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>SellerStackDigital - Crochet Patterns & Halloween Invitation Templates</title>
-<meta name="description" content="SellerStackDigital on Etsy - Bestselling Halloween invitation templates & easy crochet patterns. Instant download digital files.">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-body{font-family:system-ui,Arial;max-width:850px;margin:auto;padding:20px;line-height:1.7;color:#222}
-.hero{background:linear-gradient(135deg,#ff6b00,#ff006a);color:white;padding:40px 25px;border-radius:20px;text-align:center}
-.btn{background:white;color:#ff006a;padding:14px 30px;text-decoration:none;border-radius:30px;font-weight:bold;display:inline-block;margin-top:15px}
-.card{border:1px solid #eee;padding:20px;border-radius:16px;margin:20px 0;box-shadow:0 2px 10px rgba(0,0,0,0.05)}
-.badge{background:#ff6b00;color:white;padding:4px 10px;border-radius:20px;font-size:12px}
-a{color:#ff006a;text-decoration:none;font-weight:bold}
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SellerStack Digital | Premium Spreadsheet Templates</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #1e293b;
+      line-height: 1.5;
+    }
+    header {
+      background: linear-gradient(135deg, #0f172a, #1e1b4b);
+      color: white;
+      padding: 2.5rem 1.5rem 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    }
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin: 0;
+      letter-spacing: -0.02em;
+    }
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.1rem;
+      color: #cbd5e1;
+    }
+    nav {
+      background: #ffffff;
+      text-align: center;
+      padding: 0.75rem 0;
+      border-bottom: 1px solid #e2e8f0;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    nav a {
+      margin: 0 1.25rem;
+      text-decoration: none;
+      color: #4f46e5;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: #3730a3;
+    }
+    .hero {
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+      background: linear-gradient(180deg, #eef2ff 0%, #f8fafc 100%);
+    }
+    .hero h2 {
+      font-size: 2.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      margin: 0 0 1rem 0;
+    }
+    .hero p {
+      font-size: 1.15rem;
+      color: #475569;
+      max-width: 650px;
+      margin: 0 auto 1.5rem;
+    }
+    .hero .btn-etsy {
+      display: inline-block;
+      background: #f97316;
+      color: white;
+      text-decoration: none;
+      padding: 0.8rem 1.75rem;
+      border-radius: 8px;
+      font-weight: 600;
+      box-shadow: 0 4px 10px rgba(249, 115, 22, 0.25);
+      transition: background 0.2s, transform 0.1s;
+    }
+    .hero .btn-etsy:hover {
+      background: #ea580c;
+      transform: translateY(-1px);
+    }
+    .search-container {
+      text-align: center;
+      margin: 2.5rem 1.5rem 1rem;
+    }
+    .search-container input {
+      width: 100%;
+      max-width: 480px;
+      padding: 0.85rem 1.2rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #cbd5e1;
+      outline: none;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+      transition: border-color 0.2s;
+    }
+    .search-container input:focus {
+      border-color: #4f46e5;
+    }
+    .products {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      padding: 2rem 1.5rem 4rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+    .product {
+      background: white;
+      padding: 1.25rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .product:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    }
+    .product img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 8px;
+      margin-bottom: 1rem;
+      background: #f1f5f9;
+    }
+    .product h3 {
+      font-size: 1.2rem;
+      margin: 0.25rem 0 0.5rem;
+      color: #0f172a;
+    }
+    .product .price {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: #4f46e5;
+      margin-bottom: 1rem;
+    }
+    .product a.buy-btn {
+      display: block;
+      width: 100%;
+      text-align: center;
+      background: #4f46e5;
+      color: white;
+      padding: 0.75rem;
+      text-decoration: none;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .product a.buy-btn:hover {
+      background: #4338ca;
+    }
+    .contact {
+      background: white;
+      padding: 3rem 1.5rem;
+      max-width: 650px;
+      margin: 0 auto 4rem;
+      border-radius: 12px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    }
+    .contact h2 {
+      text-align: center;
+      margin-top: 0;
+      color: #0f172a;
+    }
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+    .contact input, .contact textarea {
+      width: 100%;
+      padding: 0.75rem 1rem;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+    }
+    .contact button {
+      background: #0f172a;
+      color: white;
+      border: none;
+      padding: 0.85rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 1rem;
+      font-weight: 600;
+      transition: background 0.2s;
+    }
+    .contact button:hover {
+      background: #1e293b;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      background: #0f172a;
+      color: #94a3b8;
+      font-size: 0.9rem;
+    }
+    footer a {
+      color: #cbd5e1;
+      text-decoration: underline;
+    }
+  </style>
 </head>
 <body>
 
-<div class="hero">
-<h1>SellerStackDigital 🧶🎃</h1>
-<p>Your Shop for Instant Download Digital Magic<br> Crochet Patterns | Halloween Invitations | Finance Workbooks</p>
-<a class="btn" href="https://sellerstackdigital.etsy.com">SHOP ON ETSY NOW →</a>
-</div>
+  <header>
+    <h1>SellerStack Digital</h1>
+    <p>Excel & Google Sheets Budget Templates | Smart Financial Calculators</p>
+  </header>
 
-<div class="card">
-<span class="badge">BESTSELLER #1</span>
-<h2>🎃 Halloween Invitation Templates 2026</h2>
-<p><b>Editable in Canva FREE in 5 mins.</b> Our top seller for 2 years.</p>
-<ul>
-<li>Spooky, Cute & Modern Designs</li>
-<li>For Kids & Adult Costume Parties</li>
-<li>Instant Download - Print or Send on WhatsApp</li>
-</ul>
-<a href="https://sellerstackdigital.etsy.com">View Halloween Collection on Etsy →</a>
-</div>
+  <nav>
+    <a href="#products">Templates</a>
+    <a href="#contact">Contact</a>
+    <a href="https://sellerstackdigital.etsy.com" target="_blank" rel="noopener">Etsy Store</a>
+  </nav>
 
-<div class="card">
-<span class="badge">BESTSELLER #2</span>
-<h2>🧶 Crochet Patterns - Easy for Beginners</h2>
-<p>PDF with step-by-step photos & video support. Sell what you make!</p>
-<a href="https://sellerstackdigital.etsy.com">View Crochet Patterns →</a>
-</div>
+  <section class="hero">
+    <h2>Take Control of Your Finances effortlessly</h2>
+    <p>Professional, fully automated Google Sheets and Excel calculators designed to simplify personal budgeting, debt payoff, and business expense tracking.</p>
+    <a href="https://sellerstackdigital.etsy.com" target="_blank" rel="noopener" class="btn-etsy">Visit Official Etsy Store</a>
+  </section>
 
-<div class="card">
-<h2>📊 Excel Finance Workbooks</h2>
-<p>Budget planners & small business trackers that actually work. Automate your money.</p>
-<a href="https://sellerstackdigital.etsy.com">View Workbooks →</a>
-</div>
+  <div class="search-container">
+    <input type="text" id="searchInput" placeholder="Search templates (e.g. Budget, Tracker, Debt)..." onkeyup="searchProducts()">
+  </div>
 
-<div style="text-align:center;margin-top:30px">
-<p>⭐⭐⭐⭐⭐ Trusted by 1000+ customers on Etsy</p>
-<p>Need custom invitation? Email us via Etsy</p>
-<p><small>© 2026 SellerStackDigital | All files are original digital designs</small></p>
-</div>
+  <section class="products" id="products">
+    <!-- Product 1 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/400x300?text=Monthly+Budget+Spreadsheet" alt="Monthly Budget Spreadsheet">
+      <h3>Ultimate Monthly Budget Template</h3>
+      <p class="price">$9.99</p>
+      <a href="https://sellerstackdigital.etsy.com" target="_blank" rel="noopener" class="buy-btn">View on Etsy</a>
+    </div>
 
+    <!-- Product 2 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/400x300?text=Debt+Snowball+Calculator" alt="Debt Payoff Tracker">
+      <h3>Automated Debt Payoff Calculator</h3>
+      <p class="price">$7.99</p>
+      <a href="https://sellerstackdigital.etsy.com" target="_blank" rel="noopener" class="buy-btn">View on Etsy</a>
+    </div>
+
+    <!-- Product 3 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/400x300?text=Business+Expense+Tracker" alt="Small Business Bookkeeping">
+      <h3>Small Business Income & Expense Tracker</h3>
+      <p class="price">$12.99</p>
+      <a href="https://sellerstackdigital.etsy.com" target="_blank" rel="noopener" class="buy-btn">View on Etsy</a>
+    </div>
+
+    <!-- Product 4 -->
+    <div class="product">
+      <img src="https://via.placeholder.com/400x300?text=Net+Worth+Tracker" alt="Net Worth Dashboard">
+      <h3>Annual Net Worth Tracker Dashboard</h3>
+      <p class="price">$6.99</p>
+      <a href="https://sellerstackdigital.etsy.com" target="_blank" rel="noopener" class="buy-btn">View on Etsy</a>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Questions or Custom Requests?</h2>
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="How can we help with your spreadsheet needs?" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2026 SellerStack Digital. All rights reserved. | Powered by <a href="https://sellerstackdigital.etsy.com" target="_blank" rel="noopener">Etsy Shop</a></p>
+  </footer>
+
+  <script>
+    function searchProducts() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const products = document.querySelectorAll('.product');
+      products.forEach(product => {
+        const title = product.querySelector('h3').textContent.toLowerCase();
+        product.style.display = title.includes(input) ? 'flex' : 'none';
+      });
+    }
+  </script>
 </body>
 </html>
